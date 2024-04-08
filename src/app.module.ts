@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
-import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -12,7 +11,7 @@ import { MeetingRoom } from './meeting-room/entities/meeting-room.entity';
 import { Booking } from './booking/entities/booking.entity';
 import { RedisModule } from './redis/redis.module';
 import { EmailModule } from './email/email.module';
-import { ConfigModule } from "@nestjs/config";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
 import { LoginGuard } from "./login.guard";
 import { PermissionGuard } from "./permission.guard";
@@ -36,11 +35,6 @@ import * as path from "path";
       },
       inject: [ConfigService]
     }),    
-    // dev
-    // ConfigModule.forRoot({
-    //   isGlobal: true,
-    //   envFilePath: 'src/.env'
-    // }),
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: path.join(__dirname, '.env')

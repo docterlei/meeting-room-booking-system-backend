@@ -17,7 +17,7 @@ services:
       - /Users/lgh/mysql-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: meeting_room_booking_system
-      MYSQL_ROOT_PASSWORD: guang
+      MYSQL_ROOT_PASSWORD: leilei111
     networks:
       - common-network
   redis-container:
