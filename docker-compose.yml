@@ -1,11 +1,17 @@
 version: '3.8'
 services:
+  fe-app:
+    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking:01
+    ports:
+      - 80:80
+    depends_on:
+      - nest-app
+    networks:
+      - common-network
   nest-app:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    ports:
-      - 3005:3005
     depends_on:
       - mysql-container
       - redis-container
