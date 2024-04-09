@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   fe-app:
-    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking:01
+    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking:02
     ports:
       - 50:80
     depends_on:
