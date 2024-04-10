@@ -9,7 +9,7 @@ services:
     networks:
       - common-network
   fe-app:
-    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking:05
+    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking_admin:01
     ports:
       - 50:80
     depends_on:
