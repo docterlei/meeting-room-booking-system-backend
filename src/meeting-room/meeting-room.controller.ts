@@ -13,35 +13,8 @@ import { MeetingRoomListVo } from './vo/meeting-room-list.vo';
 export class MeetingRoomController {
   constructor(private readonly meetingRoomService: MeetingRoomService) {}
 
-  @ApiBearerAuth()
-  @ApiQuery({
-      name: 'pageNo',
-      type: Number,
-      required: false
-  })
-  @ApiQuery({
-      name: 'pageSize',
-      type: Number,
-      required: false
-  })
-  @ApiQuery({
-      name: 'name',
-      type: String,
-      required: false
-  })
-  @ApiQuery({
-      name: 'capacity',
-      type: String,
-      required: false
-  })
-  @ApiQuery({
-      name: 'equipment',
-      type: String,
-      required: false
-  })
-  @ApiResponse({
-      type: MeetingRoomListVo
-  })
+
+  @RequireLogin()
   @Get('list')
   async list(
       @Query('pageNo', new DefaultValuePipe(1), generateParseIntPipe('pageNo')) pageNo: number,

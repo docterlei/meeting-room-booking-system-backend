@@ -32,11 +32,11 @@ export class UserService {
 
     async initData() {
         const user1 = new User();
-        user1.username = "zhangsan";
-        user1.password = md5("111111");
-        user1.email = "xxx@xx.com";
+        user1.username = "adming";
+        user1.password = md5("123456");
+        user1.email = "1101668549@qq.com";
         user1.isAdmin = true;
-        user1.nickName = '张三';
+        user1.nickName = '管理员';
         user1.phoneNumber = '13233323333';
     
         const user2 = new User();

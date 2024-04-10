@@ -1,5 +1,13 @@
 version: '3.8'
 services:
+  fe-user-app:
+    image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking_user:01
+    ports:
+      - 49:80
+    depends_on:
+      - nest-app
+    networks:
+      - common-network
   fe-app:
     image: registry.cn-hangzhou.aliyuncs.com/back_lgh/meeting_room_booking:05
     ports:
